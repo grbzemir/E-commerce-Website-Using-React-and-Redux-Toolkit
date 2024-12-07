@@ -3,6 +3,7 @@ import { thunk } from "redux-thunk";
 import { composeWithDevTools } from "@redux-devtools/extension";
 import { drawerReducer } from "./reducers/drawer";
 import { productsReducer } from "./reducers/products";
+import { productsDetailReducer } from "./reducers/productDetail";
 
 // Başlangıç durumunu ifade eden
 let initialState = {};
@@ -14,6 +15,7 @@ const reducers = combineReducers({
     // reducer3,
     drawer: drawerReducer,
     products: productsReducer,
+    product: productsDetailReducer,
 });
 
 const store = createStore(
