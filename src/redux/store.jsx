@@ -6,6 +6,7 @@ import { productsReducer } from "./reducers/products";
 import { productsDetailReducer } from "./reducers/productDetail";
 
 // Başlangıç durumunu ifade eden
+const cardItems = JSON.parse(localStorage.getItem('cardItems')) || [];
 let initialState = {};
 
 // Sayfanın tüm durumumu burada topluyorum
