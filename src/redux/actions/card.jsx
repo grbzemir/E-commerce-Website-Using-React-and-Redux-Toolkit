@@ -1,6 +1,6 @@
 
 
-export const productsActionDetail = (id, quantity) => async (dispatch) => {
+export const productsActionDetail = (id, quantity) => async (dispatch, getState) => {
     const data = await fetch(`https://fakestoreapi.com/products/${id}`)
         .then(res => res.json())
     dispatch({
@@ -13,6 +13,10 @@ export const productsActionDetail = (id, quantity) => async (dispatch) => {
             description: data.description,
             qty: quantity
 
+
         }
     })
+
+    const { card: { cardItems } } = getState();
+    localStorage.setItem('cardItems', JSON.stringify(cardItems));
 }
