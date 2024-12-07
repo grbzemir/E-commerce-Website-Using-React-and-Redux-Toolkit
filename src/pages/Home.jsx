@@ -18,12 +18,13 @@ const Home = () => {
     return (
         <div className="flex flex-wrap justify-center">
             {
-                products && products.map((prd, i) => {
+                products && products.map((prd, i) => (
                     <ProductCard key={i} prd={prd} />
-                })
+                ))
             }
         </div>
     )
+
 }
 
 export default Home
