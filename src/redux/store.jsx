@@ -4,6 +4,8 @@ import { composeWithDevTools } from "@redux-devtools/extension";
 import { drawerReducer } from "./reducers/drawer";
 import { productsReducer } from "./reducers/products";
 import { productsDetailReducer } from "./reducers/productDetail";
+import { cardReducer } from "./reducers/card";
+import { searchReducer } from "./reducers/search";
 
 // Başlangıç durumunu ifade eden
 const cardItems = JSON.parse(localStorage.getItem('cardItems')) || [];
@@ -19,6 +21,8 @@ const reducers = combineReducers({
     drawer: drawerReducer,
     products: productsReducer,
     product: productsDetailReducer,
+    card: cardReducer,
+    search: searchReducer
 });
 
 const store = createStore(
